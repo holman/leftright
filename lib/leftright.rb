@@ -40,9 +40,18 @@ module LeftRight
   # begin with the word 'test':
   #
   def self.testcase_classes
-    @testcase_classes ||= ObjectSpace.each_object(Class).find_all do |klass|
-      Test::Unit::TestCase > klass &&
-      klass.instance_methods(false).detect { |m| 'test' == m.to_s[0,4] }
+    @testcase_classes ||= begin
+      found = []
+
+      ObjectSpace.each_object(Class) do |klass|
+        if Test::Unit::TestCase > klass &&
+          klass.instance_methods(false).detect { |m| 'test' == m.to_s[0,4] }
+
+          found << klass
+        end
+      end
+
+      found
     end
   end
 
