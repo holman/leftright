@@ -1,6 +1,6 @@
 require 'lib/leftright/version'
 
-XMLOBJECT_GEMSPEC = Gem::Specification.new do |gem|
+Gem::Specification.new do |gem|
   gem.name    = 'leftright'
   gem.version = LeftRight::VERSION
 
