@@ -18,6 +18,7 @@ XMLOBJECT_GEMSPEC = Gem::Specification.new do |gem|
   gem.files = %w[
     MIT-LICENSE
     README.rdoc
+    WHATSNEW
     leftright.gemspec
     lib
     lib/leftright.rb

@@ -1,0 +1,7 @@
+* 0.0.2 (2009-10-28):
+  - Added this file. :)
+  - Fixed http://github.com/jordi/leftright/issues/#issue/1 which prevented
+    this from working in 1.8.6 (thanks technoweenie).
+
+* 0.0.1 (2009-10-28):
+  - First release.
