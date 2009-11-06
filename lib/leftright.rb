@@ -35,20 +35,14 @@ module LeftRight
     end
   end
 
-  # Gets all descendants of Class that also happen to be descendants of
-  # Test::Unit::TestCase that have non-inherited instance methods that
-  # begin with the word 'test':
+  # Gets all descendants of Class that also descend from Test::Unit::TestCase
   #
   def self.testcase_classes
     @testcase_classes ||= begin
       found = []
 
       ObjectSpace.each_object(Class) do |klass|
-        if Test::Unit::TestCase > klass &&
-          klass.instance_methods(false).detect { |m| 'test' == m.to_s[0,4] }
-
-          found << klass
-        end
+        found << klass if Test::Unit::TestCase > klass
       end
 
       found
