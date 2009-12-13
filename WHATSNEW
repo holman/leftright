@@ -1,3 +1,7 @@
+* 0.0.?
+  - Ignoring certain testcases (like ActionController::IntegrationTest) when
+    calculating the left margin. Does not break if Rails is not present.
+
 * 0.0.3 (2009-11-03):
   - Removed 'XMLOBJECT_GEMSPEC' from gemspec (copy & paste gone wrong) :(
   - Changed the TestCase collector to work like Test::Unit's.

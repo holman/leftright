@@ -45,6 +45,14 @@ module LeftRight
         found << klass if Test::Unit::TestCase > klass
       end
 
+      # Rails 2.3.5 defines these, and they cramp up my style.
+      found.reject! { |k| k.to_s == 'ActiveRecord::TestCase'            }
+      found.reject! { |k| k.to_s == 'ActionMailer::TestCase'            }
+      found.reject! { |k| k.to_s == 'ActionView::TestCase'              }
+      found.reject! { |k| k.to_s == 'ActionController::TestCase'        }
+      found.reject! { |k| k.to_s == 'ActionController::IntegrationTest' }
+      found.reject! { |k| k.to_s == 'ActiveSupport::TestCase'           }
+
       found
     end
   end
