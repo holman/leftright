@@ -27,6 +27,10 @@ Both are the same, and are loaded the same way:
 
   require 'leftright'
 
+If you're on JRuby, you'll need to install ffi-ncurses to format properly:
+
+  jruby -S gem install ffi-ncurses
+
 == Example usage
 
   require 'leftright'
